@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.polimorfismo.Animal;
+import org.example.polimorfismo.Gato;
+import org.example.polimorfismo.Perro;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -48,10 +52,20 @@ public class Main {
 //        Empleado neto = new Salario("Ernesto", "Avenida Siempre Viva 123", "12345678", 50000);
 //        System.out.println("El salario de: " + neto.nombre + " es: " + neto.getSalario());
 
-        Persona hombre1 = new Persona();
+//        Persona hombre1 = new Persona();
+//
+//        hombre1.setNombre("Ernesto");
+//
+//        System.out.println("El nombre de la persona es: " + hombre1.getNombre());
 
-        hombre1.setNombre("Ernesto");
+        Animal toto = new Perro();
+        toto.comer();
+        toto.makeNoise();
+        toto.makeNoise(true);
 
-        System.out.println("El nombre de la persona es: " + hombre1.getNombre());
+
+        Animal misifus = new Gato();
+        misifus.makeNoise();
+        misifus.makeNoise(true);
     }
 }
