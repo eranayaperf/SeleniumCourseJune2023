@@ -98,7 +98,7 @@ public class FirstTest {
         // Seleccionar un articulo de los resultados
         // Seleccionar talla y color
         // Agregar al carrito
-        
+
 
         // Actividad
         // Crear un test donde se genere un record de una computadora nueva
