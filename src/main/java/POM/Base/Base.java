@@ -1,6 +1,8 @@
 package POM.Base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
@@ -98,6 +103,27 @@ public class Base {
      */
     public void closeDriver(){
         driver.close();
+    }
+
+
+    /*
+    Read Json File Java
+     */
+    public String getJSONValue(String jsonFileObj, String jsonKey){
+        try {
+
+            // JSON Data
+            InputStream inputStream = new FileInputStream(GlobalVariables.PATH_JSON_DATA + jsonFileObj + ".json");
+            JSONObject jsonObject = new JSONObject(new JSONTokener(inputStream));
+
+            // Get Data
+            String jsonValue = (String) jsonObject.getJSONObject(jsonFileObj).get(jsonKey);
+            return jsonValue;
+
+        } catch (FileNotFoundException e) {
+            //Assert.fail("JSON file is not found");
+            return null;
+        }
     }
 
 }

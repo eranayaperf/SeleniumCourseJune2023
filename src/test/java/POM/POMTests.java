@@ -22,20 +22,40 @@ public class POMTests {
         base = new Base(driver);
         driver = base.chromeDriver();
         homePage = new HomePage(driver);
-        expectedComputer = "ARR";
+        expectedComputer = base.getJSONValue("testCase01", "computer");
     }
 
-    @Test
+    @Test (groups = "Find Computers")
     public void TestCase01() {
         base.launchBrowser(GlobalVariables.URL);
         homePage.filterByComputerName(expectedComputer);
         Assert.assertTrue(homePage.verifyComputerTable(expectedComputer));
     }
 
+    @Test (groups = "Find Computers")
+    public void TestCase02() {
+        base.launchBrowser(GlobalVariables.URL);
+        homePage.filterByComputerName(expectedComputer);
+        Assert.assertTrue(homePage.verifyComputerTable(expectedComputer));
+    }
+
+    @Test
+    public void TestCase03() {
+        base.launchBrowser(GlobalVariables.URL);
+        homePage.filterByComputerName(expectedComputer);
+        Assert.assertTrue(homePage.verifyComputerTable(expectedComputer));
+    }
+
+    @Test
+    public void TestCase04() {
+        base.launchBrowser(GlobalVariables.URL);
+        homePage.filterByComputerName(expectedComputer);
+        Assert.assertTrue(homePage.verifyComputerTable(expectedComputer));
+    }
 
     @AfterTest
     public void cleanUp(){
-        base.closeDriver();
+        //base.closeDriver();
     }
 
 }

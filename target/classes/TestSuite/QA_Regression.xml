@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="QA_Regression">
+    <test name="POMTests">
+<!--        <classes>-->
+<!--            <class name="POM.POMTests"/>-->
+<!--        </classes>-->
+        <groups>
+            <run>
+                <include name="TestCase01"/>
+                <exclude name="TestCase02"/>
+            </run>
+        </groups>
+    </test>
+<!--    <test name="LoginTests">-->
+<!--        <classes>-->
+<!--            <class name="LoginTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="CreateUsers">-->
+<!--        <classes>-->
+<!--            <class name="CreateUsers"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="DashboardTests">-->
+<!--        <classes>-->
+<!--            <class name="DashboardTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
