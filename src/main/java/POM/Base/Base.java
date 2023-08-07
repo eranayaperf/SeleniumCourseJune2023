@@ -9,7 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
 
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -122,6 +126,21 @@ public class Base {
 
         } catch (FileNotFoundException e) {
             //Assert.fail("JSON file is not found");
+            return null;
+        }
+    }
+
+    /*
+    Take Screenshot
+     */
+    public String takeScreenshot(String fileName) {
+        try{
+            String pathFileName = GlobalVariables.PATH_SCREENSHOTS + fileName + ".png";
+            Screenshot screenshot = new AShot().takeScreenshot(driver);
+            ImageIO.write(screenshot.getImage(), "PNG", new File(pathFileName));
+            return pathFileName;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }

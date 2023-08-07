@@ -92,7 +92,7 @@ public class FirstTest {
 
 //        driver.close();
 
-
+        // Actividad
         // Navegar a https://magento.softwaretestingboard.com/
         // Buscar un articulo
         // Seleccionar un articulo de los resultados

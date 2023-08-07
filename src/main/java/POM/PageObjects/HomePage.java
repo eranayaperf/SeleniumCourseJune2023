@@ -20,11 +20,14 @@ public class HomePage extends Base {
         verifyTitleContains("Computers");
         verifyVisibilityOfElementLocated(txtSearchBox);
         type(computer, txtSearchBox);
+        takeScreenshot("Enter_Search_Criteria");
         click(btnFilterByName);
+        takeScreenshot("Results_After_Click");
     }
 
     public boolean verifyComputerTable(String expectedComputer) {
         String actualComputer = getText(tblActualResult);
+        takeScreenshot("Final_Results");
         if (actualComputer.equals(expectedComputer)) {
             return true;
         } else {
